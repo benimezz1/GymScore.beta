@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GymScore • Perguntas finais</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/i18n.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand link" href="index.html">GymScore</a>
+    <div class="lang">
+      <button class="lang-btn" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 data-i18n="final_title">Perguntas finais (beta)</h1>
+
+      <div id="finalError" class="alert error hidden" role="alert" data-i18n="generic_error">
+        Alguma informação está incorreta…
+      </div>
+
+      <p class="muted" data-i18n="final_note">
+        Cardio NÃO conta no tempo do treino. Você verá “X min treino” + “Y min cardio” separados.
+      </p>
+
+      <form id="finalForm" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="cardio" data-i18n="cardio_label">Cardio</label>
+            <select id="cardio" name="cardio" required>
+              <option value="" disabled selected data-i18n="opt_select">Selecione</option>
+              <option value="none" data-i18n="cardio_none">Nenhum</option>
+              <option value="light" data-i18n="cardio_light">Leve</option>
+              <option value="mod" data-i18n="cardio_mod">Moderado</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="homeEquipBlock" class="fieldset hidden">
+          <h3 class="h3" data-i18n="equip_title">Equipamentos (se for treinar em casa)</h3>
+          <div class="checks">
+            <label><input type="checkbox" name="equip" value="dumbbells" /> <span data-i18n="equip_dumbbells">Halteres</span></label>
+            <label><input type="checkbox" name="equip" value="bands" /> <span data-i18n="equip_bands">Elástico</span></label>
+            <label><input type="checkbox" name="equip" value="pullup" /> <span data-i18n="equip_pullup">Barra fixa</span></label>
+            <label><input type="checkbox" name="equip" value="bench" /> <span data-i18n="equip_bench">Banco</span></label>
+            <label><input type="checkbox" name="equip" value="kettlebell" /> <span data-i18n="equip_kettlebell">Kettlebell</span></label>
+          </div>
+          <p class="small muted" data-i18n="equip_hint">Opcional: marque o que você tem.</p>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary" data-i18n="see_result_btn">Ver resultado</button>
+          <a class="btn ghost" href="form.html" data-i18n="back_btn">Voltar</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="small muted">GymScore • v1 beta</span>
+  </footer>
+</body>
+</html>

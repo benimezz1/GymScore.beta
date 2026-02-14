@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GymScore</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/i18n.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">GymScore</div>
+    <div class="lang">
+      <button class="lang-btn" data-lang="pt" aria-label="Português">PT</button>
+      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card hero">
+      <h1 data-i18n="home_title">Treino personalizado (sem IA) em 1 minuto</h1>
+      <p class="muted" data-i18n="home_subtitle">
+        Responda algumas perguntas e receba um plano da semana baseado em regras e score.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="form.html" data-i18n="home_start">Começar</a>
+        <a class="btn ghost" href="result.html" data-i18n="home_demo">Ver exemplo</a>
+      </div>
+
+      <ul class="bullets">
+        <li data-i18n="home_b1">Sem login, sem custo, sem IA</li>
+        <li data-i18n="home_b2">Plano da semana + 5 semanas de progressão</li>
+        <li data-i18n="home_b3">Baixar PDF via impressão</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="home_how_title">Como funciona</h2>
+      <ol class="steps">
+        <li data-i18n="home_how_1">Você preenche seus dados e preferências</li>
+        <li data-i18n="home_how_2">O sistema calcula um score e escolhe um plano</li>
+        <li data-i18n="home_how_3">Você recebe treino + aquecimento + progressão</li>
+      </ol>
+      <p class="small muted" data-i18n="home_note">
+        Observação: Isso não substitui um profissional de saúde/educação física.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="small muted">GymScore • v1 beta</span>
+  </footer>
+
+  <script>
+    // i18n init
+    document.addEventListener("DOMContentLoaded", () => {
+      initI18n();
+      applyI18n();
+    });
+  </script>
+</body>
+</html>

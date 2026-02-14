@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GymScore • Formulário</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/i18n.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand link" href="index.html">GymScore</a>
+    <div class="lang">
+      <button class="lang-btn" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 data-i18n="form_title">Seu perfil</h1>
+      <p class="muted" data-i18n="form_subtitle">Preencha para gerar o treino (sem IA) por regras e score.</p>
+
+      <div id="formError" class="alert error hidden" role="alert" data-i18n="generic_error">
+        Alguma informação está incorreta…
+      </div>
+
+      <form id="mainForm" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="age" data-i18n="age_label">Idade</label>
+            <input id="age" name="age" type="number" inputmode="numeric" min="8" max="99" required />
+            <div class="hint" data-i18n="age_hint">Obrigatório (8–99)</div>
+          </div>
+
+          <div class="field">
+            <label for="height" data-i18n="height_label">Altura (cm)</label>
+            <input id="height" name="height" type="number" inputmode="numeric" min="100" max="230" />
+            <div class="hint" data-i18n="height_hint">Opcional (se preencher: 100–230)</div>
+          </div>
+
+          <div class="field">
+            <label for="weight" data-i18n="weight_label">Peso (kg)</label>
+            <input id="weight" name="weight" type="number" inputmode="numeric" min="30" max="250" />
+            <div class="hint" data-i18n="weight_hint">Opcional (se preencher: 30–250)</div>
+          </div>
+
+          <div class="field">
+            <label for="sex" data-i18n="sex_label">Sexo</label>
+            <select id="sex" name="sex">
+              <option value="" data-i18n="opt_optional">Opcional</option>
+              <option value="male" data-i18n="sex_male">Masculino</option>
+              <option value="female" data-i18n="sex_female">Feminino</option>
+              <option value="other" data-i18n="sex_other">Outro / Prefiro não dizer</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="level" data-i18n="level_label">Nível</label>
+            <select id="level" name="level" required>
+              <option value="" disabled selected data-i18n="opt_select">Selecione</option>
+              <option value="beg" data-i18n="level_beg">Iniciante</option>
+              <option value="int" data-i18n="level_int">Intermediário</option>
+              <option value="adv" data-i18n="level_adv">Avançado</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="days" data-i18n="days_label">Dias disponíveis (1–7)</label>
+            <input id="days" name="days" type="number" inputmode="numeric" min="1" max="7" required />
+            <div class="hint" data-i18n="days_hint">Obrigatório • Se fora do intervalo, dá erro</div>
+          </div>
+
+          <div class="field">
+            <label for="duration" data-i18n="duration_label">Tempo do treino</label>
+            <select id="duration" name="duration" required>
+              <option value="" disabled selected data-i18n="opt_select">Selecione</option>
+              <option value="fast" data-i18n="duration_fast">Rápido</option>
+              <option value="med" data-i18n="duration_med">Médio</option>
+              <option value="slow" data-i18n="duration_slow">Lento</option>
+              <option value="vslow" data-i18n="duration_vslow">Muito lento</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="place" data-i18n="place_label">Local</label>
+            <select id="place" name="place" required>
+              <option value="" disabled selected data-i18n="opt_select">Selecione</option>
+              <option value="gym" data-i18n="place_gym">Academia</option>
+              <option value="home" data-i18n="place_home">Casa</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="goal" data-i18n="goal_label">Foco</label>
+            <select id="goal" name="goal" required>
+              <option value="" disabled selected data-i18n="opt_select">Selecione</option>
+              <option value="hypertrophy" data-i18n="goal_hypertrophy">Hipertrofia</option>
+              <option value="fatloss" data-i18n="goal_fatloss">Emagrecimento</option>
+              <option value="definition" data-i18n="goal_definition">Definição</option>
+              <option value="strength" data-i18n="goal_strength">Força</option>
+              <option value="conditioning" data-i18n="goal_conditioning">Condicionamento</option>
+              <option value="calisthenics" data-i18n="goal_calisthenics">Calistenia</option>
+              <option value="health" data-i18n="goal_health">Saúde</option>
+              <option value="posture" data-i18n="goal_posture">Postura</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <fieldset class="fieldset">
+          <legend data-i18n="injuries_legend">Lesões / pontos sensíveis (opcional)</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="injuries" value="shoulder" /> <span data-i18n="inj_shoulder">Ombro</span></label>
+            <label><input type="checkbox" name="injuries" value="knee" /> <span data-i18n="inj_knee">Joelho</span></label>
+            <label><input type="checkbox" name="injuries" value="spine" /> <span data-i18n="inj_spine">Coluna</span></label>
+            <label><input type="checkbox" name="injuries" value="wrist_elbow" /> <span data-i18n="inj_wrist_elbow">Punho/Cotovelo</span></label>
+            <label><input type="checkbox" name="injuries" value="hip_ankle" /> <span data-i18n="inj_hip_ankle">Quadril/Tornozelo</span></label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" class="btn primary" data-i18n="next_btn">Continuar</button>
+          <a class="btn ghost" href="index.html" data-i18n="back_home">Voltar</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="small muted">GymScore • v1 beta</span>
+  </footer>
+</body>
+</html>

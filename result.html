@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GymScore • Resultado</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/i18n.js"></script>
+  <script defer src="assets/js/plans.js"></script>
+  <script defer src="assets/js/score.js"></script>
+  <script defer src="assets/js/pdf.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand link" href="index.html">GymScore</a>
+    <div class="lang">
+      <button class="lang-btn" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card print-surface" id="resultCard">
+      <div class="row between">
+        <div>
+          <h1 data-i18n="result_title">Seu treino da semana</h1>
+          <p class="muted" id="metaLine">—</p>
+        </div>
+        <div class="no-print actions-inline">
+          <button id="btnPrint" class="btn ghost" data-i18n="btn_pdf">Baixar PDF</button>
+        </div>
+      </div>
+
+      <div id="warnings" class="stack"></div>
+
+      <div class="divider"></div>
+
+      <div class="stack">
+        <div class="pill" id="planPill">—</div>
+
+        <details class="details">
+          <summary data-i18n="warmup_title">Aquecimento (clique para abrir)</summary>
+          <div id="warmupBox" class="details-body">—</div>
+        </details>
+
+        <h2 class="h2" data-i18n="week_title">Treino da semana</h2>
+        <div id="weekBox" class="stack"></div>
+
+        <div class="divider"></div>
+
+        <div class="no-print row wrap gap">
+          <button id="btn5w" class="btn primary" data-i18n="btn_5weeks">Gerar 5 semanas</button>
+          <a class="btn ghost" href="form.html" data-i18n="edit_btn">Editar respostas</a>
+        </div>
+
+        <div id="weeks5" class="stack"></div>
+      </div>
+    </section>
+
+    <section class="card small muted">
+      <div data-i18n="rest_legend_title">Legenda de descanso</div>
+      <ul class="bullets">
+        <li data-i18n="rest_legend_1">Curto: 45–60s</li>
+        <li data-i18n="rest_legend_2">Médio: 60–90s</li>
+        <li data-i18n="rest_legend_3">Longo: 90–150s</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="small muted">GymScore • v1 beta</span>
+  </footer>
+</body>
+</html>
